@@ -1,4 +1,4 @@
-# POC GRAPPQL
+# POC GRAPhQL
 
 ## Stack
 - Java 8
