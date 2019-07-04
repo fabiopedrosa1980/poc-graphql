@@ -1,8 +1,6 @@
 package br.com.pedrosa.pocgraphql.service;
 
-import br.com.pedrosa.pocgraphql.model.Book;
 import br.com.pedrosa.pocgraphql.model.Person;
-import br.com.pedrosa.pocgraphql.repository.BookRepository;
 import br.com.pedrosa.pocgraphql.repository.PersonRepository;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLMutation;
@@ -36,7 +34,5 @@ public class PersonService {
     public void deletePerson(@GraphQLArgument(name="id") Long id){
         personRepository.deleteById(id);
     }
-
-
 
 }

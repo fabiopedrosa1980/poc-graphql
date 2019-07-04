@@ -1,12 +1,14 @@
 package br.com.pedrosa.pocgraphql.model;
 
-
 import io.leangen.graphql.annotations.GraphQLQuery;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 @Data
@@ -27,7 +29,4 @@ public class Book {
 
     @GraphQLQuery(name = "pageCount",description = "A pageCount book")
     private int pageCount;
-
-
-
 }

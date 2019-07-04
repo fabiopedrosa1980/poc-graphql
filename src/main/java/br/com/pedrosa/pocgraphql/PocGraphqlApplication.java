@@ -19,12 +19,8 @@ public class PocGraphqlApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository bookRepository, PersonRepository personRepository){
 		return (args) -> {
-			Book book = new Book(null,"Reactive Java","teste",500);
-			bookRepository.save(book);
-
-			Person person = new Person(null,"Fabio Pedrosa",38);
-			personRepository.save(person);
-
+			bookRepository.save(new Book(null,"Reactive Java","teste",500));
+			personRepository.save(new Person(null,"Fabio Pedrosa",38));
 		};
 
 	}
