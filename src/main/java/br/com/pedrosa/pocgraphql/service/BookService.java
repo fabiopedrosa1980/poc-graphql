@@ -5,11 +5,13 @@ import br.com.pedrosa.pocgraphql.repository.BookRepository;
 import io.leangen.graphql.annotations.GraphQLArgument;
 import io.leangen.graphql.annotations.GraphQLMutation;
 import io.leangen.graphql.annotations.GraphQLQuery;
+import io.leangen.graphql.spqr.spring.annotations.GraphQLApi;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
+@GraphQLApi
 public class BookService {
     private final BookRepository bookRepository;
 
@@ -32,5 +34,7 @@ public class BookService {
     public void deleteBook(@GraphQLArgument(name="id") Long id){
          bookRepository.deleteById(id);
     }
+
+
 
 }

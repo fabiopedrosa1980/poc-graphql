@@ -1,9 +1,9 @@
 package br.com.pedrosa.pocgraphql;
 
-import br.com.pedrosa.pocgraphql.model.Author;
 import br.com.pedrosa.pocgraphql.model.Book;
-import br.com.pedrosa.pocgraphql.repository.AuthorRepository;
+import br.com.pedrosa.pocgraphql.model.Person;
 import br.com.pedrosa.pocgraphql.repository.BookRepository;
+import br.com.pedrosa.pocgraphql.repository.PersonRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,13 +17,13 @@ public class PocGraphqlApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(AuthorRepository authorRepository, BookRepository bookRepository){
+	public CommandLineRunner demo(BookRepository bookRepository, PersonRepository personRepository){
 		return (args) -> {
-			Author author = new Author(null,"teste","teste");
-			authorRepository.save(author);
-
-			Book book = new Book(null,"Reactive Java","teste",500,author);
+			Book book = new Book(null,"Reactive Java","teste",500);
 			bookRepository.save(book);
+
+			Person person = new Person(null,"Fabio Pedrosa",38);
+			personRepository.save(person);
 
 		};
 

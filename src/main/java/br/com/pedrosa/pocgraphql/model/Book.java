@@ -25,11 +25,9 @@ public class Book {
     @GraphQLQuery(name = "isbn",description = "A isbn book")
     private String isbn;
 
+    @GraphQLQuery(name = "pageCount",description = "A pageCount book")
     private int pageCount;
 
-    @ManyToOne
-    @JoinColumn(name = "author_id",nullable = false,updatable = false)
-    private Author author;
 
 
 }
